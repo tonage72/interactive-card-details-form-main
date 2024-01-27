@@ -11,6 +11,7 @@
 html {
 	font-family: 'Space Grotesk', sans-serif;
 	font-size: 18px;
+	color: black;
 }
 
 img {
@@ -25,4 +26,72 @@ img {
 	--color-light-grayish-violet: hsl(270, 3%, 87%);
 	--color-dark-grayish-violet: hsl(279, 6%, 55%);
 	--color-very-dark-violet: hsl(278, 68%, 11%);
+}
+
+body {
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	flex-flow: column nowrap;
+	background: url("../images/bg-main-mobile.png");
+	background-repeat: no-repeat;
+	background-position: top;
+	background-size: 100%;
+}
+
+.card-front-back {
+	position: relative;
+	width: 90%;
+	border: 1px solid orange;
+	height: 13.7rem;
+	margin-top: 2rem;
+}
+
+.card-back-wrapper,
+.card-front-wrapper {
+	position: absolute;
+	width: 85%;
+}
+
+.card-back-wrapper {
+	top: 0;
+	right: 0;
+	z-index: 0;
+}
+
+.card-front-wrapper {
+	bottom: 0;
+	z-index: 1;
+}
+
+.card-front-back span {
+	position: absolute;
+	color: white;
+}
+
+.display-number {
+	top: 55%;
+	left: 6%;
+	font-size: clamp(.1rem, 6vw, 3rem);
+}
+
+.display-name {
+	top: 80%;
+	left: 6%;
+	font-size: clamp(.1rem, 3vw, 2rem);
+	text-transform: uppercase;
+}
+
+.display-expiration {
+	right: 6%;
+	top: 80%;
+	font-size: clamp(.1rem, 3vw, 2rem);
+}
+
+.display-special {
+	font-size: 10px;
+	top: 45%;
+	right: 12%;
+	font-size: clamp(.1rem, 3vw, 2rem);
 }
