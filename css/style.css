@@ -44,25 +44,23 @@ body {
 	position: relative;
 	width: 90%;
 	border: 1px solid orange;
-	height: 13.7rem;
+	height: 65.4vw;
 	margin-top: 2rem;
 }
 
 .card-back-wrapper,
 .card-front-wrapper {
-	position: absolute;
+	position: relative;
 	width: 85%;
 }
 
 .card-back-wrapper {
 	top: 0;
-	right: 0;
-	z-index: 0;
+	margin: 0 0 0 auto;
 }
 
 .card-front-wrapper {
-	bottom: 0;
-	z-index: 1;
+	top: -18.5vw;
 }
 
 .card-front-back span {
@@ -73,25 +71,25 @@ body {
 .display-number {
 	top: 55%;
 	left: 6%;
-	font-size: clamp(.1rem, 6vw, 3rem);
+	font-size: 6vw;
 }
 
 .display-name {
 	top: 80%;
 	left: 6%;
-	font-size: clamp(.1rem, 3vw, 2rem);
+	font-size: 3vw;
 	text-transform: uppercase;
 }
 
 .display-expiration {
 	right: 6%;
 	top: 80%;
-	font-size: clamp(.1rem, 3vw, 2rem);
+	font-size: 3vw;
 }
 
 .display-special {
 	font-size: 10px;
 	top: 45%;
 	right: 12%;
-	font-size: clamp(.1rem, 3vw, 2rem);
+	font-size: 3vw;
 }
