@@ -103,3 +103,12 @@ body {
 	right: 12%;
 	font-size: 3vw;
 }
+
+form {
+	width: 90%;
+}
+
+form :nth-child(-n+4) {
+	display: block;
+	background-color: red;
+}
