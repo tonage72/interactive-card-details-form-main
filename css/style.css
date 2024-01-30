@@ -68,6 +68,16 @@ body {
 	color: white;
 }
 
+.display-logo {
+	top: 0;
+	top: 10%;
+	left: 5%;
+}
+
+.display-logo img {
+	width: 15vw;
+}
+
 .display-number {
 	top: 55%;
 	left: 6%;
