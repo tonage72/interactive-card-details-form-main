@@ -26,6 +26,7 @@ img {
 	--color-light-grayish-violet: hsl(270, 3%, 87%);
 	--color-dark-grayish-violet: hsl(279, 6%, 55%);
 	--color-very-dark-violet: hsl(278, 68%, 11%);
+
 }
 
 body {
@@ -105,10 +106,56 @@ body {
 }
 
 form {
+	display: grid;
+	grid-template-rows: auto auto auto;
+	grid-template-columns: 60% auto;
+	grid-template-areas:
+		"cardholder cardholder"
+		"cardnumber cardnumber"
+		"expMY cvcnumber";
 	width: 90%;
+	margin-top: 3rem;
 }
 
-form :nth-child(-n+4) {
+label {
 	display: block;
-	background-color: red;
+	font-size: 3.5vw;
+	letter-spacing: .1rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	margin-bottom: .5rem;
+}
+
+input {
+	width: 100%;
+	font-size: clamp(.5rem, 5vw, 2rem);
+	padding: clamp(.5rem, 3vw, 1rem);
+	border-radius: .5rem;
+	color: black;
+	border: 1px solid var(--color-light-grayish-violet);
+	margin-bottom: 1rem;
+}
+
+input::placeholder {
+	color: var(--color-light-grayish-violet);
+}
+
+.grid-name {
+	grid-area: cardholder;
+}
+
+.grid-number {
+	grid-area: cardnumber;
+}
+
+.grid-exp-MY {
+	grid-area: expMY;
+}
+
+.grid-exp-MY input {
+	width: 30%;
+}
+
+.grid-cvcnumber {
+	grid-area: cvcnumber;
 }
