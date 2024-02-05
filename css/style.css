@@ -193,6 +193,8 @@ input::placeholder {
 		height: 600px;
 	}
 
+	/* USE A GRID */
+
 	.card-back-wrapper {
 		top: 80px;
 	}
