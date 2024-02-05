@@ -31,9 +31,10 @@ img {
 
 body {
 	display: flex;
+	flex-flow: column nowrap;
 	align-items: center;
 	justify-content: flex-start;
-	flex-flow: column nowrap;
+	height: 100vh;
 	background: url("../images/bg-main-mobile.png");
 	background-repeat: no-repeat;
 	background-position: top;
@@ -43,15 +44,16 @@ body {
 .card-front-back {
 	position: relative;
 	width: 90%;
-	border: 1px solid orange;
 	height: 65.4vw;
 	margin-top: 2rem;
+	max-width: 719px;
 }
 
 .card-back-wrapper,
 .card-front-wrapper {
 	position: relative;
 	width: 85%;
+	container-type: inline-size;
 }
 
 .card-back-wrapper {
@@ -75,51 +77,53 @@ body {
 }
 
 .display-logo img {
-	width: 15vw;
+	width: 20cqi;
 }
 
 .display-number {
+	display: block;
 	top: 55%;
 	left: 6%;
-	font-size: 6vw;
+	font-size: 7.5cqi;
 }
 
 .display-name {
 	top: 80%;
 	left: 6%;
-	font-size: 3vw;
+	font-size: 4cqi;
 	text-transform: uppercase;
 }
 
 .display-expiration {
 	right: 6%;
 	top: 80%;
-	font-size: 3vw;
+	font-size: 4cqi;
 }
 
 .display-special {
 	font-size: 10px;
 	top: 45%;
 	right: 12%;
-	font-size: 3vw;
+	font-size: 4cqi;
 }
 
 form {
 	display: grid;
 	grid-template-rows: auto auto auto;
-	grid-template-columns: 50% auto;
+	grid-template-columns: auto auto;
 	grid-template-areas:
 		"cardholder cardholder"
 		"cardnumber cardnumber"
 		"expMY cvcnumber"
 		"confirmbutton confirmbutton";
 	width: 90%;
+	max-width: 620px;
 	margin-top: 3rem;
 }
 
 label {
 	display: block;
-	font-size: 3.5vw;
+	font-size: clamp(.2rem, 3.5vw, .8rem);
 	letter-spacing: .1rem;
 	font-weight: 600;
 	text-transform: uppercase;
@@ -128,8 +132,8 @@ label {
 
 input {
 	width: 100%;
-	font-size: clamp(.5rem, 5vw, 2rem);
-	padding: clamp(.5rem, 3vw, 1rem);
+	font-size: clamp(.5rem, 5vw, 1.2rem);
+	padding: clamp(.2rem, 3vw, .8rem);
 	border-radius: .5rem;
 	color: black;
 	border: 1px solid var(--color-light-grayish-violet);
@@ -176,8 +180,24 @@ input::placeholder {
 @media (min-width: 800px) {
 	body {
 		flex-flow: row nowrap;
+		column-gap: 6rem;
 		background-image: url("../images/bg-main-desktop.png");
 		background-position: left;
 		background-size: 50%;
+	}
+	
+	.card-front-back {
+		height: 550px;
+		margin: 0;
+		border: 3px solid orange;
+		height: 600px;
+	}
+
+	.card-back-wrapper {
+		top: 80px;
+	}
+
+	.card-front-wrapper {
+		bottom: 0;
 	}
 }
