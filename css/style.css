@@ -47,6 +47,7 @@ body {
 	height: 65.4vw;
 	margin-top: 2rem;
 	max-width: 719px;
+	container-type: inline-size;
 }
 
 .card-back-wrapper,
@@ -62,7 +63,7 @@ body {
 }
 
 .card-front-wrapper {
-	top: -18.5vw;
+	top: -20.5cqi;
 }
 
 .card-front-back span {
@@ -158,6 +159,7 @@ input::placeholder {
 
 .grid-exp-MY input {
 	width: 45%;
+	max-width: 100px;
 }
 
 .grid-cvcnumber {
@@ -177,29 +179,33 @@ input::placeholder {
 	margin-top: 1rem;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 920px) {
 	body {
 		flex-flow: row nowrap;
+		align-items: center;
+		justify-content: center;
 		column-gap: 6rem;
 		background-image: url("../images/bg-main-desktop.png");
 		background-position: left;
-		background-size: 50%;
+		background-size: 33% 100%;
+		margin: 0 13vw;
 	}
 	
 	.card-front-back {
-		height: 550px;
+		height: unset;
 		margin: 0;
-		border: 3px solid orange;
-		height: 600px;
+		max-width: 479px;
 	}
 
-	/* USE A GRID */
-
 	.card-back-wrapper {
-		top: 80px;
+		top: 55cqi;
 	}
 
 	.card-front-wrapper {
-		bottom: 0;
+		top: -46.5cqi;
+	}
+
+	form {
+		max-width: 479px;
 	}
 }
