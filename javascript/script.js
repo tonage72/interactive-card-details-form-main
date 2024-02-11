@@ -1,10 +1,10 @@
 const displayNumber = document.querySelector('.display-number');
-const inputNumber = document.getElementById('input-number');
+let inputNumber = document.getElementById('input-number');
 
+inputNumber.addEventListener("keyup", updateCardNumber);
 
-
-inputNumber.addEventListener("keyup", updateCards);
-
-function updateCards() {
-	displayNumber.textContent = inputNumber.value;
+function updateCardNumber() {
+	let numberString = inputNumber.value.toString();
+	displayNumber.textContent = numberString.replace(/.{4}/g, '$& ');
+	inputNumber. = numberString.replace(/.{4}/g, '$& ');
 }
