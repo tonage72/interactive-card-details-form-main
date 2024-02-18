@@ -95,9 +95,21 @@ body {
 	text-transform: uppercase;
 }
 
-.display-expiration {
-	right: 6%;
+.display-month {
 	top: 80%;
+ 	right: 13%;
+	 font-size: 4cqi;
+}
+
+.display-exp-slash {
+	top: 79.5%;
+	right: 11.2%;
+	font-size: 4cqi;
+}
+
+.display-year {
+	top: 80%;
+	right: 6%;
 	font-size: 4cqi;
 }
 
