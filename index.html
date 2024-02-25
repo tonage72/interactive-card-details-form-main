@@ -34,6 +34,7 @@
         placeholder="e.g. Jane Appleseed"
         required>
     </div>
+    <div class="invalid-name">Invalid name. Letters only.</div>
     <div class="grid-number">
       <label for="input-number">Card Number</label>
       <input 
@@ -44,17 +45,18 @@
         placeholder="e.g. 1234 5678 9123 0000" 
         required> 
     </div>
+    <div class="invalid-number">Invalid. Numbers only.</div>
     <div class="grid-exp-MY">
       <label for="input-month">Exp. Date (MM/YY)</label>
       <input 
-        type="number" 
+        type="text" 
         id="input-month" 
         name="input-month"
         maxlength="2"
         placeholder="MM"
         required>
       <input 
-        type="number" 
+        type="text" 
         id="input-year" 
         name="input-year"
         maxlength="2"
@@ -64,13 +66,14 @@
     <div class="grid-cvcnumber">
       <label for="input-cvc">CVC</label>
       <input 
-        type="number" 
+        type="text" 
         id="input-cvc" 
         name="input-cvc"
         maxlength="3"
         placeholder="e.g. 123"
         required>
     </div>
+    <div class="invalid-M-Y-CVC">Invalid. Numbers only.</div>
     <button class="confirm-button">
       Confirm
     </button>

@@ -122,12 +122,15 @@ body {
 
 form {
 	display: grid;
-	grid-template-rows: auto auto auto;
+	grid-template-rows: auto 2rem auto 2rem auto 2rem;
 	grid-template-columns: auto auto;
 	grid-template-areas:
 		"cardholder cardholder"
+		"invalidname invalidname"
 		"cardnumber cardnumber"
+		"invalidnumber invalidnumber"
 		"expMY cvcnumber"
+		"invalidMYCVC invalidMYCVC"
 		"confirmbutton confirmbutton";
 	width: 90%;
 	max-width: 620px;
@@ -140,7 +143,6 @@ label {
 	letter-spacing: .1rem;
 	font-weight: 600;
 	text-transform: uppercase;
-	margin-bottom: .5rem;
 }
 
 input {
@@ -150,19 +152,32 @@ input {
 	border-radius: .5rem;
 	color: black;
 	border: 1px solid var(--color-light-grayish-violet);
-	margin-bottom: 1rem;
 }
 
 input::placeholder {
 	color: var(--color-light-grayish-violet);
 }
 
+[class*="invalid"] {
+	font-size: clamp(.2rem, 3vw, .8rem);
+	color: red;
+	display: none;
+}
+
 .grid-name {
 	grid-area: cardholder;
 }
 
+.invalid-name {
+	grid-area: invalidname;
+}
+
 .grid-number {
 	grid-area: cardnumber;
+}
+
+.invalid-number {
+	grid-area: invalidnumber;
 }
 
 .grid-exp-MY {
@@ -178,6 +193,10 @@ input::placeholder {
 	grid-area: cvcnumber;
 }
 
+.invalid-M-Y-CVC {
+	grid-area: invalidMYCVC;
+}
+
 .confirm-button {
 	grid-area: confirmbutton;
 	cursor: pointer;
@@ -188,7 +207,6 @@ input::placeholder {
 	color: var(--color-light-grayish-violet);
 	border-radius: .5rem;
 	font-size: 1rem;
-	margin-top: 1rem;
 }
 
 @media (min-width: 920px) {

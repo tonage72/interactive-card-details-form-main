@@ -1,16 +1,20 @@
-let displayNumber = document.querySelector('.display-number');
-let displayName = document.querySelector('.display-name');
-let displayMonth = document.querySelector('.display-month');
-let displayYear = document.querySelector('.display-year');
-let displayCVC = document.querySelector('.display-special');
+const displayNumber = document.querySelector('.display-number');
+const displayName = document.querySelector('.display-name');
+const displayMonth = document.querySelector('.display-month');
+const displayYear = document.querySelector('.display-year');
+const displayCVC = document.querySelector('.display-special');
 
-const inputNumber = document.querySelector('#input-number');
 const inputName = document.querySelector('#input-name');
+const inputNumber = document.querySelector('#input-number');
 const inputMonth = document.querySelector('#input-month');
 const inputYear = document.querySelector('#input-year');
 const inputCVC = document.querySelector('#input-cvc');
 
 const confirmButton = document.querySelector('.confirm-button');
+
+const invalidName = document.querySelector('.invalid-name')
+const invalidNumber = document.querySelector('.invalid-number')
+const invalidMYCVC = document.querySelector('.invalid-M-Y-CVC')
 
 inputName.addEventListener("keyup", () => {
 	displayName.textContent = inputName.value;
@@ -45,6 +49,36 @@ inputCVC.addEventListener("keyup", () => {
 })
 
 confirmButton.addEventListener("click", () => {
-	
+
+	if (/^[A-Za-z]+$/.test(inputName.value)) {
+		invalidName.style.display = "none";
+	} else {
+		invalidName.style.display = "block";
+	}
+
+	if (/^\d+$/.test(inputNumber.value)) {
+		invalidNumber.style.display = "none";
+	} else {
+		invalidNumber.style.display = "block";
+	}
+
+	if (/^\d+$/.test(inputMonth.value)) {
+		invalidMYCVC.style.display = "none";
+	} else {
+		invalidMYCVC.style.display = "block";
+	}
+
+	if (/^\d+$/.test(inputYear.value)) {
+		invalidMYCVC.style.display = "none";
+	} else {
+		invalidMYCVC.style.display = "block";
+	}
+
+	if (/^\d+$/.test(inputCVC.value)) {
+		invalidMYCVC.style.display = "none";
+	} else {
+		invalidMYCVC.style.display = "block";
+	}
+
 })
 
