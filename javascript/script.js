@@ -16,6 +16,9 @@ const invalidName = document.querySelector('.invalid-name')
 const invalidNumber = document.querySelector('.invalid-number')
 const invalidMYCVC = document.querySelector('.invalid-M-Y-CVC')
 
+const completedMessage = document.querySelector('.completed-message')
+const form = document.querySelector('form');
+
 inputName.addEventListener("keyup", () => {
 	displayName.textContent = inputName.value;
 })
@@ -50,35 +53,52 @@ inputCVC.addEventListener("keyup", () => {
 
 confirmButton.addEventListener("click", () => {
 
+	let nameValid = false;
+	let numberValid = false;
+	let monthValid = false;
+	let yearValid = false;
+	let CVCValid = false;
+
 	if (/^[A-Za-z]+$/.test(inputName.value)) {
 		invalidName.style.display = "none";
+		nameValid = true;
 	} else {
 		invalidName.style.display = "block";
 	}
 
 	if (/^\d+$/.test(inputNumber.value)) {
 		invalidNumber.style.display = "none";
+		numberValid = true;
 	} else {
 		invalidNumber.style.display = "block";
 	}
 
 	if (/^\d+$/.test(inputMonth.value)) {
 		invalidMYCVC.style.display = "none";
+		monthValid = true;
 	} else {
 		invalidMYCVC.style.display = "block";
 	}
 
 	if (/^\d+$/.test(inputYear.value)) {
 		invalidMYCVC.style.display = "none";
+		yearValid = true;
 	} else {
 		invalidMYCVC.style.display = "block";
 	}
 
 	if (/^\d+$/.test(inputCVC.value)) {
 		invalidMYCVC.style.display = "none";
+		CVCValid = true;
 	} else {
 		invalidMYCVC.style.display = "block";
 	}
 
+	if (nameValid && numberValid && monthValid && yearValid && CVCValid) {
+		form.style.display = "none";
+		completedMessage.style.display = "block";
+	} else {
+		console.log('not valid');
+	}
 })
 
