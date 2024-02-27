@@ -24,30 +24,18 @@ inputName.addEventListener("keyup", () => {
 })
 
 inputNumber.addEventListener("keyup", () => {
-	if(inputNumber.value.length > inputNumber.maxLength) {
-		inputNumber.value = inputNumber.value.slice(0, inputNumber.maxLength);
-	}
 		displayNumber.textContent = inputNumber.value;
 })
 
 inputMonth.addEventListener("keyup", () => {
-	if(inputMonth.value.length > inputMonth.maxLength) {
-		inputMonth.value = inputMonth.value.slice(0, inputMonth.maxLength);
-	}
 		displayMonth.textContent = inputMonth.value;
 })
 
 inputYear.addEventListener("keyup", () => {
-	if(inputYear.value.length > inputYear.maxLength) {
-		inputYear.value = inputYear.value.slice(0, inputYear.maxLength);
-	}
 		displayYear.textContent = inputYear.value;
 })
 
 inputCVC.addEventListener("keyup", () => {
-	if(inputCVC.value.length > inputCVC.maxLength) {
-		inputCVC.value = inputCVC.value.slice(0, inputCVC.maxLength);
-	}
 		displayCVC.textContent = inputCVC.value;
 })
 
@@ -59,7 +47,7 @@ confirmButton.addEventListener("click", () => {
 	let yearValid = false;
 	let CVCValid = false;
 
-	if (/^[A-Za-z]+$/.test(inputName.value)) {
+	if (/^[A-Za-z ]+$/.test(inputName.value)) {
 		invalidName.style.display = "none";
 		nameValid = true;
 	} else {
@@ -97,8 +85,5 @@ confirmButton.addEventListener("click", () => {
 	if (nameValid && numberValid && monthValid && yearValid && CVCValid) {
 		form.style.display = "none";
 		completedMessage.style.display = "block";
-	} else {
-		console.log('not valid');
 	}
 })
-
