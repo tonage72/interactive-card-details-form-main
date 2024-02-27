@@ -43,9 +43,7 @@ confirmButton.addEventListener("click", () => {
 
 	let nameValid = false;
 	let numberValid = false;
-	let monthValid = false;
-	let yearValid = false;
-	let CVCValid = false;
+	let monthYearCVCValid = false;
 
 	if (/^[A-Za-z ]+$/.test(inputName.value)) {
 		invalidName.style.display = "none";
@@ -61,28 +59,16 @@ confirmButton.addEventListener("click", () => {
 		invalidNumber.style.display = "block";
 	}
 
-	if (/^\d+$/.test(inputMonth.value)) {
+	if (/^\d+$/.test(inputMonth.value) &&
+		/^\d+$/.test(inputYear.value) &&
+		/^\d+$/.test(inputCVC.value)) {
 		invalidMYCVC.style.display = "none";
-		monthValid = true;
+		monthYearCVCValid = true;
 	} else {
 		invalidMYCVC.style.display = "block";
 	}
 
-	if (/^\d+$/.test(inputYear.value)) {
-		invalidMYCVC.style.display = "none";
-		yearValid = true;
-	} else {
-		invalidMYCVC.style.display = "block";
-	}
-
-	if (/^\d+$/.test(inputCVC.value)) {
-		invalidMYCVC.style.display = "none";
-		CVCValid = true;
-	} else {
-		invalidMYCVC.style.display = "block";
-	}
-
-	if (nameValid && numberValid && monthValid && yearValid && CVCValid) {
+	if (nameValid && numberValid && monthYearCVCValid) {
 		form.style.display = "none";
 		completedMessage.style.display = "block";
 	}
