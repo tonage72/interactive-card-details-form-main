@@ -86,4 +86,5 @@ confirmButton.addEventListener("click", () => {
 		form.style.display = "none";
 		completedMessage.style.display = "block";
 	}
+
 })
