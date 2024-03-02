@@ -161,7 +161,7 @@ input::placeholder {
 [class*="invalid"] {
 	font-size: clamp(.2rem, 3vw, .8rem);
 	color: red;
-	display: none;
+	/* display: none; */
 }
 
 .grid-name {

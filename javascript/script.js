@@ -50,27 +50,33 @@ confirmButton.addEventListener("click", () => {
 	let numberValid = false;
 	let monthYearCVCValid = false;
 
-	if (/^[A-Za-z ]+$/.test(inputName.value)) {
-		invalidName.style.display = "none";
+	if (!inputName.value) {
+		invalidName.textContent = "Cannot be blank.";
+	} else if (/^[A-Za-z ]+$/.test(inputName.value)) {
+		invalidName.textContent = "";
 		nameValid = true;
 	} else {
-		invalidName.style.display = "block";
+		invalidName.textContent = "Invalid. Letters only.";
 	}
 
-	if (/^[\d ]+$/.test(inputNumber.value)) {
-		invalidNumber.style.display = "none";
+	if (!inputNumber.value) {
+		invalidNumber.textContent = "Cannot be blank.";
+	} else if (/^[\d ]+$/.test(inputNumber.value)) {
+		invalidNumber.textContent = "";
 		numberValid = true;
 	} else {
-		invalidNumber.style.display = "block";
+		invalidNumber.textContent = "Invalid. Numbers only.";
 	}
 
-	if (/^\d+$/.test(inputMonth.value) &&
+	if (!inputMonth.value || !inputYear.value || !inputCVC.value) {
+		invalidMYCVC.textContent = "MM YY CVC Cannot be blank";
+	} else if (/^\d+$/.test(inputMonth.value) &&
 		/^\d+$/.test(inputYear.value) &&
 		/^\d+$/.test(inputCVC.value)) {
-		invalidMYCVC.style.display = "none";
+		invalidMYCVC.textContent = "";
 		monthYearCVCValid = true;
 	} else {
-		invalidMYCVC.style.display = "block";
+		invalidMYCVC.textContent = "MM YY CVC Invalid. Numbers only.";
 	}
 
 	if (nameValid && numberValid && monthYearCVCValid) {
