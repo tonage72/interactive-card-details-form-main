@@ -12,12 +12,14 @@ const inputCVC = document.querySelector('#input-cvc');
 
 const confirmButton = document.querySelector('.confirm-button');
 
-const invalidName = document.querySelector('.invalid-name')
-const invalidNumber = document.querySelector('.invalid-number')
-const invalidMYCVC = document.querySelector('.invalid-M-Y-CVC')
+const invalidName = document.querySelector('.invalid-name');
+const invalidNumber = document.querySelector('.invalid-number');
+const invalidMYCVC = document.querySelector('.invalid-M-Y-CVC');
 
-const completedMessage = document.querySelector('.completed-message')
+const completedMessage = document.querySelector('.completed-message');
 const form = document.querySelector('form');
+
+const completedContinue = document.querySelector('.completed-continue');
 
 inputName.addEventListener("keyup", () => {
 	displayName.textContent = inputName.value;
@@ -83,5 +85,8 @@ confirmButton.addEventListener("click", () => {
 		form.style.display = "none";
 		completedMessage.style.display = "block";
 	}
+})
 
+completedContinue.addEventListener("click", () => {
+	location.reload();
 })
