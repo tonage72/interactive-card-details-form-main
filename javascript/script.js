@@ -23,9 +23,14 @@ inputName.addEventListener("keyup", () => {
 	displayName.textContent = inputName.value;
 })
 
-inputNumber.addEventListener("keyup", () => {
-		displayNumber.textContent = inputNumber.value;
-})
+inputNumber.oninput = function () {
+    var foo = this.value.split(" ").join("");
+    if (foo.length > 0) {
+        foo = foo.match(new RegExp('.{1,4}', 'g')).join(" ");
+    }
+    this.value = foo;
+	displayNumber.textContent = inputNumber.value;
+};
 
 inputMonth.addEventListener("keyup", () => {
 		displayMonth.textContent = inputMonth.value;
@@ -52,7 +57,7 @@ confirmButton.addEventListener("click", () => {
 		invalidName.style.display = "block";
 	}
 
-	if (/^\d+$/.test(inputNumber.value)) {
+	if (/^[\d ]+$/.test(inputNumber.value)) {
 		invalidNumber.style.display = "none";
 		numberValid = true;
 	} else {
