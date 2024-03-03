@@ -121,8 +121,9 @@ body {
 }
 
 form {
+	--size-errors-div: clamp(.5rem, 6vw, 2rem);
 	display: grid;
-	grid-template-rows: auto 2rem auto 2rem auto 2rem;
+	grid-template-rows: auto var(--size-errors-div) auto var(--size-errors-div) auto var(--size-errors-div);
 	grid-template-columns: auto auto;
 	grid-template-areas:
 		"cardholder cardholder"
@@ -161,7 +162,6 @@ input::placeholder {
 [class*="invalid"] {
 	font-size: clamp(.2rem, 3vw, .8rem);
 	color: red;
-	/* display: none; */
 }
 
 .grid-name {
@@ -246,7 +246,7 @@ input::placeholder {
 	margin: 2rem auto 0 auto;
 }
 
-@media (min-width: 920px) {
+@media (min-width: 910px) {
 	body {
 		flex-flow: row nowrap;
 		align-items: center;
