@@ -63,6 +63,8 @@ confirmButton.addEventListener("click", () => {
 
 	if (!inputNumber.value) {
 		invalidNumber.textContent = "Cannot be blank.";
+	} else if (inputNumber.value.length != 19) {
+		invalidNumber.textContent = "Not enough digits."
 	} else if (/^[\d ]+$/.test(inputNumber.value)) {
 		invalidNumber.textContent = "";
 		numberValid = true;
@@ -72,13 +74,17 @@ confirmButton.addEventListener("click", () => {
 
 	if (!inputMonth.value || !inputYear.value || !inputCVC.value) {
 		invalidMYCVC.textContent = "MM YY CVC Cannot be blank";
+	} else if (inputMonth.value.length != 2 ||
+		inputYear.value.length != 2 ||
+		inputCVC.value.length != 3) {
+			invalidMYCVC.textContent = "Need more digits in MM YY or CVC"
 	} else if (/^\d+$/.test(inputMonth.value) &&
 		/^\d+$/.test(inputYear.value) &&
 		/^\d+$/.test(inputCVC.value)) {
-		invalidMYCVC.textContent = "";
-		monthYearCVCValid = true;
+			invalidMYCVC.textContent = "";
+			monthYearCVCValid = true;
 	} else {
-		invalidMYCVC.textContent = "MM YY CVC Invalid. Numbers only.";
+		invalidMYCVC.textContent = "MM YY or CVC Invalid. Numbers only.";
 	}
 
 	if (nameValid && numberValid && monthYearCVCValid) {
